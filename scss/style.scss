@@ -1,0 +1,551 @@
+@import '_settings';
+
+// -------------------------------
+// 全体構造
+// -------------------------------
+body {
+    color: #333333;
+    background-color: #A8DCDF;
+    font-size: $font20;
+}
+
+img {
+    border-radius: 5px;
+}
+
+// -------------------------------
+// ヘッダー
+// -------------------------------
+#top header {
+
+    /*== ヘッダー追従のためのCSS */
+    /*追従ナビのためpositionをfixedにする,topを0*/
+    position: fixed;
+    top: 0;
+    height: 110px;
+    /*position:fixed;にしたため、横幅100%を設定*/
+    width: 100%;
+    background-color: #A8DCDF;
+    @include row();
+    z-index: 50;
+
+    h1 {
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    // hamburgermenu for mobile
+    div.g-nav {
+        display: none;
+    }
+
+    nav.pc {
+        width: 80%;
+        margin-left: 40px;
+
+        ul {
+            max-width: 700px;
+            @include row-space-start();
+        }
+
+        li a {
+            text-align: center;
+            font-size: $font20;
+            // ヘッダーのリンクをホバーしたときに文字が大きくなる
+            display: inline-block;
+            transition: .3s;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+
+
+            &:hover {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+
+        span {
+            display: block;
+            font-size: $font12;
+        }
+    }
+
+}
+
+// -------------------------------
+// フッター
+// -------------------------------
+#top footer {
+    background-color: #A8DCDF;
+    @include row();
+    flex-wrap: wrap;
+    padding-top: 10px;
+
+    h1 {
+        width: 200px;
+        margin-left: 20px;
+    }
+
+    nav {
+        width: 80%;
+        margin-left: 40px;
+
+        ul {
+            max-width: 700px;
+            @include row-space-start();
+
+            li a {
+                text-align: center;
+                font-size: $font20;
+                // ヘッダーのリンクをホバーしたときに文字が大きくなる
+                display: inline-block;
+                transition: .3s;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+
+
+                &:hover {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+
+            }
+        }
+    }
+
+    p {
+        width: 100%;
+        text-align: right;
+        font-size: $font12;
+        padding: 10px 20px;
+    }
+}
+
+// -------------------------------
+// メイン 共通
+// -------------------------------
+#top main {
+    .text {
+        background-color: #DBF0FB;
+        width: 415px;
+        padding: 70px 40px;
+        text-align: center;
+        border-radius: 5px;
+
+        h3 {
+            font-size: $font25;
+            margin-bottom: 30px;
+        }
+
+        p {
+            line-height: 2;
+            text-align: justify;
+        }
+    }
+
+    h4 {
+        font-size: $font30;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .button-orange {
+        color: #FF7554;
+        text-align: right;
+        margin-top: 30px;
+
+        &:hover {
+            color: #ffffff;
+            transition: all .3s;
+        }
+
+        a {
+            display: inline;
+        }
+    }
+
+    .button-white {
+        width: 250px;
+        line-height: 2.3;
+        text-align: center;
+        color: #FF7554;
+        background-color: #ffffff;
+        border: 1px solid #ffffff;
+
+        border-radius: 30px;
+
+        &:hover {
+            color: #ffffff;
+            background-color: #A8DCDF;
+            transition: all .2s;
+        }
+    }
+}
+
+// -------------------------------
+// メイン
+// -------------------------------
+#top main {
+    // headerの下に隠れないように
+    padding-top: 200px;
+
+    .main-visual {
+        @include row-space-center();
+        margin-bottom: 50px;
+
+        .catch-text {
+            width: 40%;
+            @include center();
+        }
+
+        p {
+            font-size: $font25;
+            writing-mode: vertical-rl;
+            letter-spacing: 1em;
+            line-height: 2;
+        }
+
+        h2 {
+            // slideの上のlogo
+            position: absolute;
+            width: 400px;
+            height: 140px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 20;
+        }
+
+        .slide {
+            width: 60%;
+
+            .slider img {
+                width: 100%;
+                /*スライダー内の画像を横幅100%に*/
+                height: auto;
+            }
+
+            /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+            .slider .slick-slide {
+                margin: 0 10px;
+                /*スライド左右の余白調整*/
+            }
+        }
+    }
+
+    .concept {
+        margin-bottom: 50px;
+
+        .back-image {
+            background-image: url(../images/catch-image.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 450px;
+        }
+
+        .text {
+            margin-left: 10%;
+        }
+    }
+
+    .dog-image {
+        margin-bottom: 250px;
+        // z-indexを使うときはpositionにstatic以外の何かが指定する
+        z-index: -1;
+        position: relative;
+
+        img {
+            width: 100%;
+            border-radius: 0;
+        }
+    }
+
+    .products {
+        width: 80%;
+        margin: 0 auto 110px;
+
+        .main-products {
+            @include row-space-center();
+
+            .product {
+                width: 30%;
+                background-color: #ffffff;
+                border-radius: 5px;
+
+                // hoverで浮いて影がつく
+                position: relative;
+                top: 0;
+                display: inline-block;
+                text-decoration: none;
+                outline: none;
+                /*アニメーションの設定*/
+                transition: all .3s;
+
+                &:hover {
+                    top: -3px;
+                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+                }
+
+
+                img {
+                    width: 100%;
+                    border-radius: 5px 5px 0 0;
+                }
+
+                h5 {
+                    font-size: $font25;
+                    margin: 20px 0;
+                    text-align: center;
+                }
+
+                p {
+                    line-height: 1.5;
+                    padding: 0 30px 30px;
+                }
+
+            }
+        }
+    }
+
+    .new {
+        background-image: url(../images/new-products.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 650px;
+        @include row-around-end();
+        position: relative;
+
+        .button-white {
+            margin-bottom: 100px;
+            position: absolute;
+            bottom: 5%;
+            left: 13%;
+        }
+
+        .text {
+            position: absolute;
+            bottom: -100px;
+            right: 13%;
+        }
+    }
+
+    .instagram {
+        margin: 350px auto 120px;
+
+        .official {
+            max-width: 950px;
+            margin: 0 auto 130px;
+            @include row-space-center();
+
+            .images {
+                position: relative;
+                z-index: 3;
+                // width heightを設定しないとimgが消える
+                width: 500px;
+                height: 600px;
+
+                .img1 {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 30px;
+                    z-index: 3;
+                }
+
+                .img2 {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 30px;
+                    z-index: 2;
+                }
+
+                .move2 {
+                    transform: translateY(-50px) translateX(-100px) rotate(-20deg);
+                    transition: all.4s;
+                }
+
+                .img3 {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 30px;
+                    translate: 30px;
+                    z-index: 1;
+                }
+
+                .move3 {
+                    transform: translateY(-80px) translateX(60px) rotate(20deg);
+                    transition: all.4s;
+                }
+            }
+
+            .instagram-text p {
+                margin: 0 auto;
+            }
+
+            .text {
+                background-color: #A8DCDF;
+            }
+        }
+
+        .friends {
+            width: 80%;
+            margin: 0 auto;
+            @include row-space-center();
+
+            .friend {
+                text-align: center;
+                // hoverすると画像にズームする
+                cursor: pointer;
+                max-width: 300px;
+                overflow: hidden;
+                width: 100%;
+
+                img {
+                    height: auto;
+                    transition: transform .6s ease;
+                    /* ゆっくり変化させる */
+                }
+
+                a:hover img {
+                    transform: scale(1.1);
+                    /* 拡大 */
+                }
+
+                p {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+    }
+
+    .sns {
+        margin-bottom: 250px;
+        background-color: #ffffff;
+        padding-top: 30px;
+        padding-bottom: 50px;
+
+        .official-sns {
+            max-width: 950px;
+            margin: 10px auto 0;
+            @include row-space-center();
+
+            p {
+                width: 7em;
+                font-size: $font25;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            i {
+                font-size: 50px;
+            }
+
+            a:hover p {
+                color: #A8DCDF;
+                transition: all .3s;
+            }
+        }
+    }
+
+    .news {
+        max-width: 950px;
+        margin: 0 auto 250px;
+
+        ul {
+            padding: 1em 2em;
+            margin: 0 auto;
+            border: double 5px #A8DCDF;
+            background-color: #ffffff;
+
+            li {
+                border-bottom: 1px solid #A8DCDF;
+                line-height: 3;
+                font-size: $font18;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+
+            time {
+                font-size: $font15;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .shop {
+        background-image: url(../images/shop.jpg);
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 70vh;
+        position: relative;
+        margin-bottom: 250px;
+
+        .text {
+            position: absolute;
+            top: 5%;
+            right: 20%;
+
+            address {
+                line-height: 2;
+                text-align: justify;
+            }
+        }
+    }
+
+    .donation {
+        margin-bottom: 250px;
+
+        h3 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .shelters {
+            max-width: 950px;
+            margin: 0 auto;
+            @include row-space-start();
+
+            .shelter {
+                width: 30%;
+                background-color: #ffffff;
+                border-radius: 5px;
+                // hoverで浮いて影がつく
+                position: relative;
+                top: 0;
+                padding: 20px 20px;
+                display: inline-block;
+                text-decoration: none;
+                outline: none;
+                /*アニメーションの設定*/
+                transition: all .3s;
+
+                &:hover {
+                    top: -3px;
+                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+                }
+
+                p {
+                    text-align: center;
+                    line-height: 2;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+    }
+}
+
+// トップで読み込むとハンバーガーメニューが表示されなくなる
+@import '_responsive';

@@ -1,0 +1,38 @@
+// width base 1070
+$font12: 12px;
+$font15: 15px;
+$font18: 18px;
+$font25: 25px;
+$font30: 30px;
+$font20: 20px;
+
+
+@mixin row() {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin row-space-start() {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@mixin row-space-center() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin row-around-end() {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
