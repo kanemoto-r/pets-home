@@ -1,6 +1,128 @@
-@media screen and (max-width:576px) {
+@media screen and (max-width:1200px) {
 
-    #top header {
+    // タブレット用
+    #top main {
+        .products {
+            .main-products {
+                .product {
+                    width: 33%;
+                }
+            }
+        }
+
+        .new {
+            .text {
+                bottom: -400px;
+                right: 0;
+            }
+        }
+
+        .instagram {
+            .official {
+                flex-direction: column;
+
+                .images {
+                    width: 30%;
+                }
+            }
+
+            .friends {
+                .friend {
+                    max-width: 200px;
+
+                    p {
+                        font-size: $font15;
+                    }
+                }
+            }
+        }
+
+        .shop {
+            margin-top: 350px;
+
+            .text {
+                top: -200px;
+                right: 0;
+            }
+        }
+
+        .donation {
+            .shelters {
+                .shelter {
+                    width: 33%;
+
+                    p {
+                        font-size: $font15;
+                    }
+                }
+            }
+        }
+    }
+
+    #product1 main,
+    #new main,
+    #news main {
+        margin: 150px auto;
+
+        .box {
+            flex-direction: column;
+            padding: 80px;
+        }
+
+        h2 {
+            font-size: $font25;
+        }
+
+        .star {
+            font-size: $font12;
+        }
+
+        .description {
+            line-height: 1.5;
+        }
+
+        .text {
+            width: 100%;
+            padding: 60px 10px;
+            font-size: $font18;
+        }
+
+        .photos {
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+
+            .new-image {
+                max-width: 400px;
+            }
+
+        }
+    }
+
+    #news main {
+        h2 {
+            font-size: $font20;
+            line-height: 1.5;
+        }
+
+        .description {
+            margin-bottom: 8px;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+
+// 基本576px
+@media screen and (max-width:800px) {
+
+    #top header,
+    #product1 header,
+    #new header,
+    #news header {
         height: 90px;
 
         h1 {
@@ -140,7 +262,10 @@
     // -------------------------------
     // フッター
     // -------------------------------
-    #top footer {
+    #top footer,
+    #product1 footer,
+    #new footer,
+    #news footer {
         text-align: center;
 
         h1 {
@@ -386,4 +511,44 @@
         }
 
     }
+
+    // -------------------------------
+    //  コンテンツ　メイン 
+    // -------------------------------
+
+
+    #product1 main,
+    #new main,
+    #news main {
+
+        .box {
+            padding: 20px;
+        }
+
+        .text {
+            width: 100%;
+            padding: 60px 10px;
+            font-size: $font18;
+        }
+
+        .photos {
+            width: 100%;
+        }
+    }
+
+    #news main {
+        h2 {
+            font-size: $font20;
+            line-height: 1.5;
+        }
+
+        .description {
+            margin-bottom: 8px;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+
 }

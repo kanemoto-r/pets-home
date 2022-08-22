@@ -9,7 +9,10 @@ img {
   border-radius: 5px;
 }
 
-#top header {
+#top header,
+#product1 header,
+#new header,
+#news header {
   /*== ヘッダー追従のためのCSS */
   /*追従ナビのためpositionをfixedにする,topを0*/
   position: fixed;
@@ -30,21 +33,33 @@ img {
   z-index: 50;
 }
 
-#top header h1 {
+#top header h1,
+#product1 header h1,
+#new header h1,
+#news header h1 {
   margin-left: 20px;
   margin-top: 5px;
 }
 
-#top header div.g-nav {
+#top header div.g-nav,
+#product1 header div.g-nav,
+#new header div.g-nav,
+#news header div.g-nav {
   display: none;
 }
 
-#top header nav.pc {
+#top header nav.pc,
+#product1 header nav.pc,
+#new header nav.pc,
+#news header nav.pc {
   width: 80%;
   margin-left: 40px;
 }
 
-#top header nav.pc ul {
+#top header nav.pc ul,
+#product1 header nav.pc ul,
+#new header nav.pc ul,
+#news header nav.pc ul {
   max-width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -57,7 +72,10 @@ img {
           align-items: flex-start;
 }
 
-#top header nav.pc li a {
+#top header nav.pc li a,
+#product1 header nav.pc li a,
+#new header nav.pc li a,
+#news header nav.pc li a {
   text-align: center;
   font-size: 20px;
   display: inline-block;
@@ -67,56 +85,66 @@ img {
   transform: scale(1);
 }
 
-#top header nav.pc li a:hover {
+#top header nav.pc li a:hover,
+#product1 header nav.pc li a:hover,
+#new header nav.pc li a:hover,
+#news header nav.pc li a:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-#top header nav.pc span {
+#top header nav.pc span,
+#product1 header nav.pc span,
+#new header nav.pc span,
+#news header nav.pc span {
   display: block;
   font-size: 12px;
 }
 
-#top footer {
+#top footer,
+#product1 footer,
+#new footer,
+#news footer {
   background-color: #A8DCDF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   padding-top: 10px;
 }
 
-#top footer h1 {
-  width: 200px;
-  margin-left: 20px;
+#top footer h1,
+#product1 footer h1,
+#new footer h1,
+#news footer h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-#top footer nav {
-  width: 80%;
-  margin-left: 40px;
+#top footer nav,
+#product1 footer nav,
+#new footer nav,
+#news footer nav {
+  width: 70%;
+  margin: 0 auto;
 }
 
-#top footer nav ul {
-  max-width: 700px;
+#top footer nav ul,
+#product1 footer nav ul,
+#new footer nav ul,
+#news footer nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#top footer nav ul li a {
+#top footer nav ul li a,
+#product1 footer nav ul li a,
+#new footer nav ul li a,
+#news footer nav ul li a {
   text-align: center;
   font-size: 20px;
   display: inline-block;
@@ -126,12 +154,18 @@ img {
   transform: scale(1);
 }
 
-#top footer nav ul li a:hover {
+#top footer nav ul li a:hover,
+#product1 footer nav ul li a:hover,
+#new footer nav ul li a:hover,
+#news footer nav ul li a:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-#top footer p {
+#top footer p,
+#product1 footer p,
+#new footer p,
+#news footer p {
   width: 100%;
   text-align: right;
   font-size: 12px;
@@ -193,6 +227,10 @@ img {
   background-color: #A8DCDF;
   -webkit-transition: all .2s;
   transition: all .2s;
+}
+
+#top main .button-white a {
+  display: block;
 }
 
 #top main {
@@ -623,8 +661,350 @@ img {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 576px) {
-  #top header {
+#product1 main,
+#new main,
+#news main {
+  margin: 200px auto;
+  /*==================================
+    スライダーのためのcss
+    ===================================*/
+  /*画像の横幅を100%にしてレスポンシブ化*/
+  /*メイン画像下に余白をつける*/
+  /*矢印の設定*/
+  /*戻る、次へ矢印の位置*/
+  /*選択するサムネイル画像の設定*/
+}
+
+#product1 main .box,
+#new main .box,
+#news main .box {
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #ffffff;
+  padding: 100px;
+  border-radius: 5px;
+}
+
+#product1 main h2,
+#new main h2,
+#news main h2 {
+  font-size: 30px;
+}
+
+#product1 main .star,
+#new main .star,
+#news main .star {
+  font-size: 15px;
+}
+
+#product1 main span,
+#new main span,
+#news main span {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+#product1 main .description,
+#new main .description,
+#news main .description {
+  font-size: 18px;
+}
+
+#product1 main .button,
+#new main .button,
+#news main .button {
+  width: 250px;
+  line-height: 2.3;
+  text-align: center;
+  color: #FF7554;
+  background-color: #ffffff;
+  border: 1px solid #FF7554;
+  margin: 20px 0;
+  border-radius: 30px;
+}
+
+#product1 main .button:hover,
+#new main .button:hover,
+#news main .button:hover {
+  color: #ffffff;
+  background-color: #A8DCDF;
+  border: 1px solid #ffffff;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#product1 main .button-orange,
+#new main .button-orange,
+#news main .button-orange {
+  color: #FF7554;
+  text-align: right;
+  margin-top: 30px;
+  margin-right: 5%;
+}
+
+#product1 main .button-orange:hover,
+#new main .button-orange:hover,
+#news main .button-orange:hover {
+  color: #ffffff;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#product1 main .button-orange a,
+#new main .button-orange a,
+#news main .button-orange a {
+  display: inline;
+}
+
+#product1 main .text,
+#new main .text,
+#news main .text {
+  width: 40%;
+  padding: 0 50px;
+  line-height: 2;
+}
+
+#product1 main .photos,
+#new main .photos,
+#news main .photos {
+  width: 40%;
+}
+
+#product1 main img,
+#new main img,
+#news main img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  /*画像の下にできる余白を削除*/
+}
+
+#product1 main .gallery,
+#new main .gallery,
+#news main .gallery {
+  margin: 0 0 5px 0;
+}
+
+#product1 main .gallery li,
+#new main .gallery li,
+#news main .gallery li {
+  list-style: none;
+}
+
+#product1 main .slick-prev,
+#product1 main .slick-next,
+#new main .slick-prev,
+#new main .slick-next,
+#news main .slick-prev,
+#news main .slick-next {
+  position: absolute;
+  /*絶対配置にする*/
+  z-index: 3;
+  top: 42%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #ccc;
+  /*矢印の色*/
+  border-right: 2px solid #ccc;
+  /*矢印の色*/
+  height: 25px;
+  width: 25px;
+}
+
+#product1 main .slick-prev,
+#new main .slick-prev,
+#news main .slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: 2.5%;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+#product1 main .slick-next,
+#new main .slick-next,
+#news main .slick-next {
+  /*次へ矢印の位置と形状*/
+  right: 2.5%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#product1 main .choice-btn li,
+#new main .choice-btn li,
+#news main .choice-btn li {
+  cursor: pointer;
+  outline: none;
+  background: #A8DCDF;
+  width: 25% !important;
+  list-style: none;
+}
+
+#product1 main .choice-btn li img,
+#new main .choice-btn li img,
+#news main .choice-btn li img {
+  opacity: 0.4;
+  /*選択されていないものは透過40%*/
+}
+
+#product1 main .choice-btn li.slick-current img,
+#new main .choice-btn li.slick-current img,
+#news main .choice-btn li.slick-current img {
+  opacity: 1;
+  /*選択されているものは透過しない*/
+}
+
+#product1 main .choice-btn .slick-track,
+#new main .choice-btn .slick-track,
+#news main .choice-btn .slick-track {
+  -webkit-transform: unset !important;
+          transform: unset !important;
+  /*画面幅サイズ変更に伴うサムネイル固定*/
+}
+
+#news main .text {
+  width: 100%;
+}
+
+#news main .text .instagram-image {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#news main .text .instagram-image img {
+  width: 400px;
+  height: 400px;
+}
+
+#news main .text h2 {
+  font-size: 25px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#news main .text time {
+  font-size: 12px;
+}
+
+#news main .text .description {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  #top main .products .main-products .product {
+    width: 33%;
+  }
+  #top main .new .text {
+    bottom: -400px;
+    right: 0;
+  }
+  #top main .instagram .official {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #top main .instagram .official .images {
+    width: 30%;
+  }
+  #top main .instagram .friends .friend {
+    max-width: 200px;
+  }
+  #top main .instagram .friends .friend p {
+    font-size: 15px;
+  }
+  #top main .shop {
+    margin-top: 350px;
+  }
+  #top main .shop .text {
+    top: -200px;
+    right: 0;
+  }
+  #top main .donation .shelters .shelter {
+    width: 33%;
+  }
+  #top main .donation .shelters .shelter p {
+    font-size: 15px;
+  }
+  #product1 main,
+  #new main,
+  #news main {
+    margin: 150px auto;
+  }
+  #product1 main .box,
+  #new main .box,
+  #news main .box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 80px;
+  }
+  #product1 main h2,
+  #new main h2,
+  #news main h2 {
+    font-size: 25px;
+  }
+  #product1 main .star,
+  #new main .star,
+  #news main .star {
+    font-size: 12px;
+  }
+  #product1 main .description,
+  #new main .description,
+  #news main .description {
+    line-height: 1.5;
+  }
+  #product1 main .text,
+  #new main .text,
+  #news main .text {
+    width: 100%;
+    padding: 60px 10px;
+    font-size: 18px;
+  }
+  #product1 main .photos,
+  #new main .photos,
+  #news main .photos {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #product1 main .photos .new-image,
+  #new main .photos .new-image,
+  #news main .photos .new-image {
+    max-width: 400px;
+  }
+  #news main h2 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  #news main .description {
+    margin-bottom: 8px;
+  }
+  #news main img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #top header,
+  #product1 header,
+  #new header,
+  #news header {
     height: 90px;
     /*== ナビゲーションのためのCSS ==*/
     /*アクティブクラスがついたら位置を0に*/
@@ -634,17 +1014,29 @@ img {
     /*========= ボタンのためのCSS ===============*/
     /*×に変化*/
   }
-  #top header h1 img {
+  #top header h1 img,
+  #product1 header h1 img,
+  #new header h1 img,
+  #news header h1 img {
     width: auto;
     height: 80px;
   }
-  #top header nav.pc {
+  #top header nav.pc,
+  #product1 header nav.pc,
+  #new header nav.pc,
+  #news header nav.pc {
     display: none;
   }
-  #top header div.g-nav {
+  #top header div.g-nav,
+  #product1 header div.g-nav,
+  #new header div.g-nav,
+  #news header div.g-nav {
     display: block;
   }
-  #top header #g-nav {
+  #top header #g-nav,
+  #product1 header #g-nav,
+  #new header #g-nav,
+  #news header #g-nav {
     /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
     position: fixed;
     z-index: 999;
@@ -659,10 +1051,16 @@ img {
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
   }
-  #top header #g-nav.panelactive {
+  #top header #g-nav.panelactive,
+  #product1 header #g-nav.panelactive,
+  #new header #g-nav.panelactive,
+  #news header #g-nav.panelactive {
     right: 0;
   }
-  #top header #g-nav.panelactive #g-nav-list {
+  #top header #g-nav.panelactive #g-nav-list,
+  #product1 header #g-nav.panelactive #g-nav-list,
+  #new header #g-nav.panelactive #g-nav-list,
+  #news header #g-nav.panelactive #g-nav-list {
     /*ナビの数が増えた場合縦スクロール*/
     position: fixed;
     z-index: 999;
@@ -672,7 +1070,10 @@ img {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
-  #top header #g-nav ul {
+  #top header #g-nav ul,
+  #product1 header #g-nav ul,
+  #new header #g-nav ul,
+  #news header #g-nav ul {
     /*ナビゲーション天地中央揃え*/
     position: absolute;
     z-index: 999;
@@ -681,11 +1082,17 @@ img {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
-  #top header #g-nav li {
+  #top header #g-nav li,
+  #product1 header #g-nav li,
+  #new header #g-nav li,
+  #news header #g-nav li {
     list-style: none;
     text-align: center;
   }
-  #top header #g-nav li a {
+  #top header #g-nav li a,
+  #product1 header #g-nav li a,
+  #new header #g-nav li a,
+  #news header #g-nav li a {
     color: #333;
     text-decoration: none;
     padding: 10px;
@@ -693,10 +1100,16 @@ img {
     letter-spacing: 0.1em;
     font-size: 20px;
   }
-  #top header #g-nav li a span {
+  #top header #g-nav li a span,
+  #product1 header #g-nav li a span,
+  #new header #g-nav li a span,
+  #news header #g-nav li a span {
     font-size: 12px;
   }
-  #top header .openbtn {
+  #top header .openbtn,
+  #product1 header .openbtn,
+  #new header .openbtn,
+  #news header .openbtn {
     position: fixed;
     z-index: 9999;
     /*ボタンを最前面に*/
@@ -706,7 +1119,10 @@ img {
     width: 50px;
     height: 50px;
   }
-  #top header .openbtn span {
+  #top header .openbtn span,
+  #product1 header .openbtn span,
+  #new header .openbtn span,
+  #news header .openbtn span {
     display: inline-block;
     -webkit-transition: all .4s;
     transition: all .4s;
@@ -717,43 +1133,73 @@ img {
     background-color: #666;
     width: 45%;
   }
-  #top header .openbtn span:nth-of-type(1) {
+  #top header .openbtn span:nth-of-type(1),
+  #product1 header .openbtn span:nth-of-type(1),
+  #new header .openbtn span:nth-of-type(1),
+  #news header .openbtn span:nth-of-type(1) {
     top: 15px;
   }
-  #top header .openbtn span:nth-of-type(2) {
+  #top header .openbtn span:nth-of-type(2),
+  #product1 header .openbtn span:nth-of-type(2),
+  #new header .openbtn span:nth-of-type(2),
+  #news header .openbtn span:nth-of-type(2) {
     top: 23px;
   }
-  #top header .openbtn span:nth-of-type(3) {
+  #top header .openbtn span:nth-of-type(3),
+  #product1 header .openbtn span:nth-of-type(3),
+  #new header .openbtn span:nth-of-type(3),
+  #news header .openbtn span:nth-of-type(3) {
     top: 31px;
   }
-  #top header .openbtn.active span:nth-of-type(1) {
+  #top header .openbtn.active span:nth-of-type(1),
+  #product1 header .openbtn.active span:nth-of-type(1),
+  #new header .openbtn.active span:nth-of-type(1),
+  #news header .openbtn.active span:nth-of-type(1) {
     top: 18px;
     left: 18px;
     -webkit-transform: translateY(6px) rotate(-45deg);
             transform: translateY(6px) rotate(-45deg);
     width: 30%;
   }
-  #top header .openbtn.active span:nth-of-type(2) {
+  #top header .openbtn.active span:nth-of-type(2),
+  #product1 header .openbtn.active span:nth-of-type(2),
+  #new header .openbtn.active span:nth-of-type(2),
+  #news header .openbtn.active span:nth-of-type(2) {
     opacity: 0;
   }
-  #top header .openbtn.active span:nth-of-type(3) {
+  #top header .openbtn.active span:nth-of-type(3),
+  #product1 header .openbtn.active span:nth-of-type(3),
+  #new header .openbtn.active span:nth-of-type(3),
+  #news header .openbtn.active span:nth-of-type(3) {
     top: 30px;
     left: 18px;
     -webkit-transform: translateY(-6px) rotate(45deg);
             transform: translateY(-6px) rotate(45deg);
     width: 30%;
   }
-  #top footer {
+  #top footer,
+  #product1 footer,
+  #new footer,
+  #news footer {
     text-align: center;
   }
-  #top footer h1 {
+  #top footer h1,
+  #product1 footer h1,
+  #new footer h1,
+  #news footer h1 {
     width: 100%;
   }
-  #top footer nav {
+  #top footer nav,
+  #product1 footer nav,
+  #new footer nav,
+  #news footer nav {
     display: none;
     text-align: center;
   }
-  #top footer p {
+  #top footer p,
+  #product1 footer p,
+  #new footer p,
+  #news footer p {
     text-align: center;
   }
   #top main .text {
@@ -933,5 +1379,33 @@ img {
   }
   #top #main .donation .shelters .shelter:last-child {
     margin-bottom: 0;
+  }
+  #product1 main .box,
+  #new main .box,
+  #news main .box {
+    padding: 20px;
+  }
+  #product1 main .text,
+  #new main .text,
+  #news main .text {
+    width: 100%;
+    padding: 60px 10px;
+    font-size: 18px;
+  }
+  #product1 main .photos,
+  #new main .photos,
+  #news main .photos {
+    width: 100%;
+  }
+  #news main h2 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  #news main .description {
+    margin-bottom: 8px;
+  }
+  #news main img {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }

@@ -16,7 +16,10 @@ img {
 // -------------------------------
 // ヘッダー
 // -------------------------------
-#top header {
+#top header,
+#product1 header,
+#new header,
+#news header {
 
     /*== ヘッダー追従のためのCSS */
     /*追従ナビのためpositionをfixedにする,topを0*/
@@ -75,24 +78,25 @@ img {
 // -------------------------------
 // フッター
 // -------------------------------
-#top footer {
+#top footer,
+#product1 footer,
+#new footer,
+#news footer {
     background-color: #A8DCDF;
-    @include row();
-    flex-wrap: wrap;
     padding-top: 10px;
 
     h1 {
-        width: 200px;
-        margin-left: 20px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
     }
 
     nav {
-        width: 80%;
-        margin-left: 40px;
+        width: 70%;
+        margin: 0 auto;
 
         ul {
-            max-width: 700px;
-            @include row-space-start();
+            @include row-space-center();
 
             li a {
                 text-align: center;
@@ -178,6 +182,10 @@ img {
             color: #ffffff;
             background-color: #A8DCDF;
             transition: all .2s;
+        }
+
+        a {
+            display: block;
         }
     }
 }
@@ -546,6 +554,200 @@ img {
 
     }
 }
+
+// -------------------------------
+// コンテンツ メイン
+// -------------------------------
+
+#product1 main,
+#new main,
+#news main {
+    margin: 200px auto;
+
+    .box {
+        width: 90%;
+        margin: 0 auto;
+        @include center();
+        align-items: flex-start;
+        background-color: #ffffff;
+        padding: 100px;
+        border-radius: 5px;
+    }
+
+    h2 {
+        font-size: $font30;
+    }
+
+    .star {
+        font-size: $font15;
+    }
+
+    span {
+        margin-left: 5px;
+        font-size: $font12;
+    }
+
+    .description {
+        font-size: $font18;
+    }
+
+    .button {
+        width: 250px;
+        line-height: 2.3;
+        text-align: center;
+        color: #FF7554;
+        background-color: #ffffff;
+        border: 1px solid #FF7554;
+        margin: 20px 0;
+        border-radius: 30px;
+
+        &:hover {
+            color: #ffffff;
+            background-color: #A8DCDF;
+            border: 1px solid #ffffff;
+
+            transition: all .2s;
+        }
+    }
+
+    .button-orange {
+        color: #FF7554;
+        text-align: right;
+        margin-top: 30px;
+        margin-right: 5%;
+
+        &:hover {
+            color: #ffffff;
+            transition: all .3s;
+        }
+
+        a {
+            display: inline;
+        }
+    }
+
+
+    .text {
+        width: 40%;
+        padding: 0 50px;
+        line-height: 2;
+    }
+
+    .photos {
+        width: 40%;
+    }
+
+    /*==================================
+    スライダーのためのcss
+    ===================================*/
+    /*画像の横幅を100%にしてレスポンシブ化*/
+    img {
+        width: 100%;
+        height: auto;
+        vertical-align: bottom;
+        /*画像の下にできる余白を削除*/
+    }
+
+    /*メイン画像下に余白をつける*/
+
+    .gallery {
+        margin: 0 0 5px 0;
+    }
+
+    .gallery li {
+        list-style: none;
+    }
+
+    /*矢印の設定*/
+
+    /*戻る、次へ矢印の位置*/
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        /*絶対配置にする*/
+        z-index: 3;
+        top: 42%;
+        cursor: pointer;
+        /*マウスカーソルを指マークに*/
+        outline: none;
+        /*クリックをしたら出てくる枠線を消す*/
+        border-top: 2px solid #ccc;
+        /*矢印の色*/
+        border-right: 2px solid #ccc;
+        /*矢印の色*/
+        height: 25px;
+        width: 25px;
+    }
+
+    .slick-prev {
+        /*戻る矢印の位置と形状*/
+        left: 2.5%;
+        transform: rotate(-135deg);
+    }
+
+    .slick-next {
+        /*次へ矢印の位置と形状*/
+        right: 2.5%;
+        transform: rotate(45deg);
+    }
+
+    /*選択するサムネイル画像の設定*/
+
+    .choice-btn li {
+        cursor: pointer;
+        outline: none;
+        background: #A8DCDF;
+        width: 25% !important;
+        list-style: none;
+    }
+
+    .choice-btn li img {
+        opacity: 0.4;
+        /*選択されていないものは透過40%*/
+    }
+
+    .choice-btn li.slick-current img {
+        opacity: 1;
+        /*選択されているものは透過しない*/
+    }
+
+    .choice-btn .slick-track {
+        transform: unset !important;
+        /*画面幅サイズ変更に伴うサムネイル固定*/
+    }
+}
+
+#news main {
+
+    .text {
+        width: 100%;
+
+        .instagram-image {
+            text-align: center;
+            margin-bottom: 50px;
+
+            img {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        h2 {
+            font-size: $font25;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        time {
+            font-size: $font12;
+        }
+
+        .description {
+            margin-bottom: 20px;
+        }
+    }
+}
+
 
 // トップで読み込むとハンバーガーメニューが表示されなくなる
 @import '_responsive';
